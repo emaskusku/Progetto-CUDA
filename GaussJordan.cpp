@@ -2,7 +2,7 @@
 #include <cmath>
 #include <fstream>
 
-#define N 500
+#define N 1500
 
 
 using namespace std;
@@ -75,6 +75,7 @@ void PivTriangolazione(double m[N][N], double v[N]){
   double coef;
 
   for(int i=0; i<N-1; i++){
+    cout<<"Passaggio "<<i+1<<" / "<<N-1<<endl;
     //seleziono e scambio le righe col massimo
     for(int j=i; j<N; j++){
       if(max<abs(m[j][i])){
@@ -118,16 +119,22 @@ void solve(double m[N][N], double termini[N], double sol[N]){
     }
 }
 
-
+void confrontaSol(double sol[N],double solmath[N]){
+  for(int i=0; i<N; i++){
+	if(abs(sol[i]/solmath[i]-1)>0.0001)
+	cout<<i<<" "<< abs(sol[i]/solmath[i]-1)<<endl;
+  }
+}
 
 int main(){
 
   int dim;
   double matrice [N][N];
   double termini[N]; //termini noti
-  double soluzioni [N];
+  double soluzioni [N],soluzionimath[N];
   ifstream GetMatrix;
   ifstream GetTerm;
+  ifstream GetSol;
 
   GetMatrix.open("matrix.txt");
   if(GetMatrix.fail()){
@@ -153,13 +160,44 @@ int main(){
   GetMatrix.close();
   GetTerm.close();
 
-  PivTriangolazione(matrice,termini);
-  //Triangolazione(matrice,termini);
 
+
+
+  //printmatrice(matrice,termini);
+  //cout <<endl<<"Triangolazione:"<<endl;
+
+  //Triangolazione(matrice,termini);
+  PivTriangolazione(matrice,termini);
+  //printmatrice(matrice,termini);
   cout << endl;
-  cout<<N<<endl;
+  //cout<<N<<endl;
+  //cout<< "Faccio il determinante!"<<endl;
+  //if(determinant(matrice,N)!=0){
+    //cout << "Determinante > 0, ora risolvo!"<<endl;
   solve(matrice,termini,soluzioni);
-  printSol(soluzioni);
+    //printSol(soluzioni);
+  //}
+  //else{
+    //cout << "Il sistema non ha un unica soluzione, non lo risolvo!"<<endl;
+  //}
+
+  cout<<"---------------------------------"<<endl;
+
+  GetSol.open("solutions.txt");
+  if(GetSol.fail()){
+     cout<< endl << "Problema apertura file di ingresso dati! Esco!";
+     return 0;
+  }
+  
+  for(int i=0; i<N; i++){
+     GetSol >> soluzionimath[i];
+  }  
+
+  //printSol(soluzionimath);
+
+  cout<<"Confronto la soluzione trovata con quella esatta: "<<endl;
+
+  confrontaSol(soluzioni,soluzionimath);
 
   return 0;
 }
