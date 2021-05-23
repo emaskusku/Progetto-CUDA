@@ -12,3 +12,9 @@ solveC.cpp:(.text+0x762): undefined reference to `std::ios_base::Init::~Init()'
 /tmp/cc8fAmCL.o: In function `_tr0':
 solveC.tm.c:(.text+0x3d): undefined reference to `solveC'
 collect2: error: ld returned 1 exit status
+
+dim: 10000
+mathematica error:
+No more memory available.
+Mathematica kernel has shut down.
+Try quitting other applications and then retry.
