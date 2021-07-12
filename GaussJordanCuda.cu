@@ -172,10 +172,10 @@ void triangolizza( dato *matrice ){
 	completa_matrice<<<c_blocks,c_threads>>>(matrice_dev);
 
 	for( int i=0; i<N-1; i++){
-		findmax<<<nblock1,THREADS>>>(matrice_dev, pivot_dev, i, Max);
+		findmax<<<nblock1,THREADS>>>(matrice_dev, pivot_dev, i, Max); // trova il massimo della colonna i
 		//cudaMemcpy(Maxcpu,Max,nblock1*sizeof(int),cudaMemcpyDeviceToHost);
 		//cout<<Maxcpu[0]<<endl;
-		pivoting<<<nblock1,THREADS>>>(matrice_dev, i, Max);
+		pivoting<<<nblock1,THREADS>>>(matrice_dev, i, Max); //scambia la riga con il massimo con la riga i
 		triangolo<<<c_blocks,c_threads>>>(matrice_dev,i);
 	}
 	
