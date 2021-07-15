@@ -14,4 +14,14 @@ dimensione  tempo mathematica [sec]  tempo c++ [sec]  precisione % [double]  pre
 
 la precisione dipende tanto dal valore dei risultati: i valori maggiori tenderanno ad essere meno precisi
 
-macchina usata: king
+macchina usata: king, per cuda pong
+CUDA:
+dimenione     tempo     prec
+2000          6,15854   
+4000          49,0715   
+
+COL PIVOTING FUNZIONA FINO A 16 BLOCCHI, POI GLI ERRORI AUMENTANO TANTISSIMO, invece senza il pivoting non c'è questo limite.
+Mathematica è velocissima con king, lenta con gli altri,  almeno quelli che ho provato io.
+Il programma non funziona con tutti i computer, molti saltano le funzioni col kernel 2D. Funzionano di sicuro abe e pong di quelli che ho provato io.
+
+
