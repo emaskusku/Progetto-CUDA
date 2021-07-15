@@ -22,7 +22,7 @@ dimenione     tempo     prec
 4000          49,0715   
 7000          242.293
 10000         706,914   (rispetto ai risultati in c++) 0,1-0,001
-COL PIVOTING FUNZIONA FINO A 16 BLOCCHI, POI GLI ERRORI AUMENTANO TANTISSIMO, invece senza il pivoting non c'è questo limite.
+
 Mathematica è velocissima con king, lenta con gli altri,  almeno quelli che ho provato io.
 Il programma non funziona con tutti i computer, molti saltano le funzioni col kernel 2D. Funzionano di sicuro abe e pong di quelli che ho provato io.
 
