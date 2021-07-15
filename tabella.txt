@@ -10,7 +10,8 @@ dimensione  tempo mathematica [sec]  tempo c++ [sec]  precisione % [double]  pre
 4500        1028,57                  117,166          >0,00001
 5000        1367,68                  157,918          >0,00001                0.00308647
 5500        1637,13                  212,529          >0,00001
-7000        3440,76                  429,061          >0,00001
+7000        3440,76              429,061/687.413          >0,00001
+10000                               2008,04 (unimi)
 
 la precisione dipende tanto dal valore dei risultati: i valori maggiori tenderanno ad essere meno precisi
 
@@ -19,7 +20,8 @@ CUDA:
 dimenione     tempo     prec
 2000          6,15854   
 4000          49,0715   
-
+7000          242.293
+10000         706,914   (rispetto ai risultati in c++) 0,1-0,001
 COL PIVOTING FUNZIONA FINO A 16 BLOCCHI, POI GLI ERRORI AUMENTANO TANTISSIMO, invece senza il pivoting non c'è questo limite.
 Mathematica è velocissima con king, lenta con gli altri,  almeno quelli che ho provato io.
 Il programma non funziona con tutti i computer, molti saltano le funzioni col kernel 2D. Funzionano di sicuro abe e pong di quelli che ho provato io.
