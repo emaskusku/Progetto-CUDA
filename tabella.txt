@@ -16,6 +16,7 @@ dimensione  tempo mathematica [sec]  tempo c++ [sec]  precisione % [double]  pre
 la precisione dipende tanto dal valore dei risultati: i valori maggiori tenderanno ad essere meno precisi
 
 macchina usata: king, per cuda pong
+scheda grafica: QUADRO 600
 CUDA:
 dimenione     tempo     prec
 2000          6,15854   
