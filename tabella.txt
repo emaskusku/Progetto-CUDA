@@ -33,7 +33,7 @@ Tesla C2075:
 dimensione    tempo
 5000          14,3542 (float)/15,9047 (double)      // jacobi
 
-GeForge 480
+GeForce 480
 5000          10.8868 (float) /13.1913 (double)     // jacobi
 
 
