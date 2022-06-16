@@ -1,20 +1,6 @@
 # Progetto-CUDA
 
-Problema di linking (credo)
-
-in: mcc solveC.tm solveC.cpp -o solveC
-
-out: /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
-(.text+0x20): undefined reference to `main'
-/tmp/ccpTwiVy.o: In function `__static_initialization_and_destruction_0(int, int)':
-solveC.cpp:(.text+0x74d): undefined reference to `std::ios_base::Init::Init()'
-solveC.cpp:(.text+0x762): undefined reference to `std::ios_base::Init::~Init()'
-/tmp/cc8fAmCL.o: In function `_tr0':
-solveC.tm.c:(.text+0x3d): undefined reference to `solveC'
-collect2: error: ld returned 1 exit status
-
-dim: 10000
-mathematica error:
-No more memory available.
-Mathematica kernel has shut down.
-Try quitting other applications and then retry.
+The Gauss Jordan method was implemented for the resolution of systems of first degree equations using CUDA.
+File named "Relazione_MCdF__CUDA.pdf" is a written report of the whole work (in italian). 
+To create the matrix and find the exact solutions was used Mathematica, a cross-platform symbolic and numerical computing environment.
+"GaussJordan.cpp" file contains the simple resolution of the system with Gauss Jordan method written in c++, indeed, not parallelized. "GaussJordanCuda.cu" resolves the system with parallel computing.
